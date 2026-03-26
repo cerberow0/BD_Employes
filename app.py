@@ -8,7 +8,7 @@ LOGO_URL = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRBE18TlcXuZbRA
 
 # --- 1. CONFIGURACIÓN DE LA PÁGINA ---
 st.set_page_config(
-    page_title="Directorio Aguas y Aguas",
+    page_title="Directorio Aguas - Gintelco",
     page_icon="💧",
     layout="centered"
 )
