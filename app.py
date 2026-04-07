@@ -96,14 +96,21 @@ else:
                         with c1:
                             st.markdown(f"🖥️ **Máquina:** {emp.get('machine_name', 'N/A')}")
                         with c2:
-                            st.markdown(f"🌐 **IP:** {emp.get('ip_target', 'N/A')}")
+                            st.markdown(f"🌐 **IP:**<br>`{emp.get('ip_target', 'N/A')}`", unsafe_allow_html=True)
                         with c3:
-                            st.markdown(f"📞 **Teléfono:** {phone}")
+                            st.markdown(f"📞 **Teléfono:**<br> {phone}", unsafe_allow_html=True)
                         with c4:
                             if phone and phone != 'N/A':
                                 clean_phone = ''.join(filter(str.isdigit, str(phone)))
                                 whatsapp_url = f"https://wa.me/57{clean_phone}"
-                                st.markdown(f'💬 **Whatsapp:** <a href="{whatsapp_url}" target="_blank"><img src="https://img.icons8.com/color/20/whatsapp.png"/> Abrir chat</a>', unsafe_allow_html=True)
+                                clean_phone = ''.join(filter(str.isdigit, str(phone)))
+                                whatsapp_url = f"https://wa.me/57{clean_phone}"
+                                st.markdown(
+                                    f'**Whatsapp:**<br>'
+                                    f'<a href="{whatsapp_url}" target="_blank">'
+                                    f'<img src="https://img.icons8.com/color/20/whatsapp.png"/> Abrir chat</a>', 
+                                    unsafe_allow_html=True
+                                )
                             else:
                                 st.markdown("💬 **Whatsapp:** N/A")
             else:
@@ -113,4 +120,4 @@ else:
             st.error(f"Error: {e}")
     
     st.markdown("---")
-    st.caption("v1.1 - Nicolas - BETA 2026")
+    st.caption("v1.1 - Nicolas & Gintelo - 2026")
